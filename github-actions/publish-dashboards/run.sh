@@ -35,7 +35,7 @@ for f in dashboards/**/*.jsonnet ; do
     dbname=$(basename "$f" | sed 's/\.jsonnet$//')
 
     echo "Updating dashboard ${folder}/${dbname}"
-
+	echo jsonnet -J /grafonnet-lib -J . "${f}" 
     if ! jsonnet -J /grafonnet-lib -J . "${f}" | \
             jq "{ \"dashboard\": ., \"folderId\": ${folder_id}, \"overwrite\": true }" > \
                "/tmp/${dbname}.json" ; then
