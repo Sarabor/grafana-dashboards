@@ -7,7 +7,7 @@ local table = grafana.tablePanel;
 local tableStyles = [
   # Hide the time column.
   {
-    alias: 'Time_test_2',
+    alias: 'Time_test_3',
     pattern: 'Time',
     type: 'hidden',
   },
